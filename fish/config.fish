@@ -41,4 +41,4 @@ set offset_color red
 
 function fish_prompt
     printf '%s%s %s%s%s >> ' (set_color $base_color) (prompt_pwd) (set_color $offset_color) (date "+%H:%M:%S") (set_color $base_color)
-end⏎
+end
