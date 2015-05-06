@@ -37,8 +37,16 @@ if status --is-login
 	end
 end
 set base_color normal
-set offset_color red
+set offset_color yellow
+set uname_color green
+set root_color red
+set username (whoami)
 
 function fish_prompt
-    printf '%s%s %s%s%s >> ' (set_color $base_color) (prompt_pwd) (set_color $offset_color) (date "+%H:%M:%S") (set_color $base_color)
+	 if [ (whoami) != 'root' ]
+	    printf '%s%s %s%s %s%s%s >> ' (set_color $uname_color) (whoami) (set_color $base_color) (pwd) (set_color $offset_color) (date "+%H:%M:%S") (set_color $base_color)
+	 end
+	 if [ (whoami) = 'root' ]
+	    printf '%s%s %s%s %s%s%s >> ' (set_color $root_color) (whoami) (set_color $base_color) (pwd) (set_color $offset_color) (date "+%H:%M:%S") (set_color $base_color)
+	 end
 end
