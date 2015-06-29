@@ -10,4 +10,7 @@ cp emacs.el ~/.emacs
 wget https://raw.githubusercontent.com/juba/color-theme-tangotango/master/color-theme-tangotango.el
 mv color-theme-tangotango.el /usr/share/emacs/site-lisp/
 cp config.fish /etc/fish/
+mkdir $HOME/shell-scripts
+cp UpdateServer.sh $HOME/shell-scripts
+chsh -s /usr/bin/fish
 echo "Done"
