@@ -50,3 +50,11 @@ function fish_prompt
 	    printf '%s%s %s%s %s%s%s >> ' (set_color $root_color) (whoami) (set_color $base_color) (pwd) (set_color $offset_color) (date "+%H:%M:%S") (set_color $base_color)
 	 end
 end
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias mlogs='cd /var/log/mumble-server'
+alias la="ls -lah"
+alias home="cd ~/"
+alias update="sudo $HOME/shell-scripts/UpdateServer.sh"
+alias refresh=". /etc/fish/config.fish"
