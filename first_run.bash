@@ -12,5 +12,4 @@ mv color-theme-tangotango.el /usr/share/emacs/site-lisp/
 cp config.fish /etc/fish/
 mkdir $HOME/shell-scripts
 cp UpdateServer.sh $HOME/shell-scripts
-chsh -s /usr/bin/fish
 echo "Done"
