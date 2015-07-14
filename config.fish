@@ -53,7 +53,6 @@ end
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias mlogs='cd /var/log/mumble-server'
 alias la="ls -lah"
 alias home="cd ~/"
 alias update="sudo $HOME/shell-scripts/UpdateServer.sh"
