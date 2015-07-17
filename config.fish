@@ -36,20 +36,23 @@ if status --is-login
 		end
 	end
 end
-set base_color normal
-set offset_color yellow
-set uname_color green
-set root_color red
-set username (whoami)
+set pcolor C0C0C0
+set dcolor 6600CC
+set user (whoami)
+set cname (hostname)
+set datetime (date "+%H:%M%p")
 
 function fish_prompt
 	 if [ (whoami) != 'root' ]
-	    printf '%s%s %s%s %s%s%s >> ' (set_color $uname_color) (whoami) (set_color $base_color) (pwd) (set_color $offset_color) (date "+%H:%M:%S") (set_color $base_color)
+	    set ucolor B2FF66
+	    set pchar "\$ "
+	 else
+	    set ucolor FF6666
+	    set pchar "# "
 	 end
-	 if [ (whoami) = 'root' ]
-	    printf '%s%s %s%s %s%s%s >> ' (set_color $root_color) (whoami) (set_color $base_color) (pwd) (set_color $offset_color) (date "+%H:%M:%S") (set_color $base_color)
-	 end
+	 echo (set_color $dcolor)$datetime(set_color normal):(set_color $ucolor)(whoami)@(hostname)(set_color normal):(set_color $pcolor)" "(prompt_pwd) $pchar
 end
+
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
