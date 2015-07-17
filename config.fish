@@ -38,8 +38,6 @@ if status --is-login
 end
 set pcolor C0C0C0
 set dcolor 6600CC
-set user (whoami)
-set cname (hostname)
 set datetime (date "+%H:%M%p")
 
 function fish_prompt
