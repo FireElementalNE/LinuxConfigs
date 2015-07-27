@@ -40,6 +40,15 @@ set pcolor C0C0C0
 set dcolor 6600CC
 set datetime (date "+%H:%M%p")
 
+function git_branch
+    set -g try_git (git rev-parse --abbrev-ref HEAD ^ /dev/null)
+    if [ $status -ne 0 ]
+        echo ""
+    else
+        echo " $try_git"
+    end
+end
+
 function fish_prompt
 	 set rc $status
 	 if [ (whoami) != 'root' ]
@@ -49,13 +58,5 @@ function fish_prompt
 	    set ucolor FF6666
 	    set pchar "# "
 	 end
-	 echo $rc (set_color $dcolor)$datetime(set_color normal):(set_color $ucolor)(whoami)@(hostname)(set_color normal):(set_color $pcolor)" "(prompt_pwd) $pchar
+	 echo $rc (set_color $dcolor)$datetime(set_color normal):(set_color $ucolor)(whoami)@(hostname)(set_color normal):(set_color $pcolor)" "(prompt_pwd)(set_color yellow)(git_branch)(set_color $pcolor) $pchar 
 end
-
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias la="ls -lah"
-alias home="cd ~/"
-alias update="sudo $HOME/shell-scripts/UpdateServer.sh"
-alias refresh=". /etc/fish/config.fish"
