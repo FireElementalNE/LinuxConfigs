@@ -33,10 +33,7 @@
 (setq ring-bell-function 'ignore)
 
 ;; ========== Color Theme =========
-(require 'color-theme)
-(color-theme-initialize)
-(require 'color-theme-tangotango)
-(color-theme-tangotango)
+(load-theme 'tangotango t)
 
 ;; ========= Disable Toolbar ========
 (tool-bar-mode -1)
