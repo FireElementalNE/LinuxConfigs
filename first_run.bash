@@ -7,8 +7,10 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install -y guake gcc g++ python emacs perl make units git git-cola fish python-pip screen
 cp emacs.el ~/.emacs
-wget https://raw.githubusercontent.com/juba/color-theme-tangotango/master/color-theme-tangotango.el
-mv color-theme-tangotango.el ~/emacs.d/
+wget https://raw.githubusercontent.com/juba/color-theme-tangotango/master/tangotango-theme.el
+mkdir -p /root/.emacs.d
+cp tangotango-theme.el /root/.emacs.d/
+mv tangotango-theme.el ~/.emacs.d/
 cp config.fish /etc/fish/
 mkdir $HOME/shell-scripts
 cp UpdateServer.sh $HOME/shell-scripts
