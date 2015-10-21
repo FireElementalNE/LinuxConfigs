@@ -37,13 +37,13 @@ if status --is-login
 	end
 end
 set pcolor C0C0C0
-set dcolor 6600CC
+set dcolor 7D47B2
 set datetime (date "+%H:%M%p")
 
 function fish_prompt
 	 set rc $status
 	 if [ (whoami) != 'root' ]
-	    set ucolor B2FF66
+	    set ucolor 7CB247
 	    set pchar "\$ "
 	 else
 	    set ucolor FF6666
