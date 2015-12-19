@@ -32,8 +32,16 @@
 ;;========= Disable Bell =========
 (setq ring-bell-function 'ignore)
 
+;; ======== tab width ===========
+
+(setq tab-width 4)
+(setq indent-tabs-mode nil)
+
 ;; ========== Color Theme =========
-(load-theme 'tangotango t)
+
+;; (load-theme 'tangotango t)
+
+(load-theme 'badwolf t)
 
 ;; ========= Disable Toolbar ========
 (tool-bar-mode -1)
