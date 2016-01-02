@@ -38,7 +38,6 @@ if status --is-login
 end
 set pcolor C0C0C0
 set dcolor 7D47B2
-set datetime (date "+%H:%M%p")
 
 function fish_prompt
 	 set rc $status
@@ -49,7 +48,7 @@ function fish_prompt
 	    set ucolor FF6666
 	    set pchar "# "
 	 end
-	 echo $rc (set_color $dcolor)$datetime(set_color normal):(set_color $ucolor)(whoami)@(hostname)(set_color normal):(set_color $pcolor)" "(prompt_pwd) $pchar
+	 echo $rc (set_color $dcolor)(date "+%H:%M%p")(set_color normal):(set_color $ucolor)(whoami)@(hostname)(set_color normal):(set_color $pcolor)" "(prompt_pwd) $pchar
 end
 
 alias ll='ls -alF'
