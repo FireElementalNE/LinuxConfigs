@@ -48,7 +48,7 @@ function fish_prompt
 	    set ucolor FF6666
 	    set pchar "# "
 	 end
-	 echo $rc (set_color $dcolor)(date "+%r")(set_color normal):(set_color $ucolor)(whoami)@(hostname)(set_color normal):(set_color $pcolor)" "(prompt_pwd) $pchar
+	 echo $rc (set_color $dcolor)(date "+%I:%M%p")(set_color normal):(set_color $ucolor)(whoami)@(hostname)(set_color normal):(set_color $pcolor)" "(prompt_pwd) $pchar
 end
 
 alias ll='ls -alF'
