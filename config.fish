@@ -55,5 +55,6 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias la="ls -lah"
+alias df="df --total -h"
 alias refresh=". /etc/fish/config.fish"
 # alias update="bash $HOME/shell-scripts/updateserver.sh"
