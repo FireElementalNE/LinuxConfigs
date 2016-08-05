@@ -14,16 +14,13 @@
 (custom-set-variables
  '(inhibit-startup-screen t)
  '(show-paren-mode t))
-(custom-set-faces
- '(default ((t (:inherit nil :stipple nil :background nil
-:foreground nil :inverse-video nil :box nil
-:strike-through nil :overline nil :underline nil
-:slant normal :weight normal
-:height 102 :width normal :foundry "unknown"
-:family "DejaVu Sans Mono")))))
+
+;;======== Font =================
+;(set-default-font "Inconsolata")
+(set-default-font "DejaVu Sans Mono")
 
 ;;========= Font Size ===========
-(set-face-attribute 'default nil :height 105)
+(set-face-attribute 'default nil :height 120)
 
 ;; ======== CUA mode ===========
 (when (display-graphic-p) ;; do not want in terminal mode
