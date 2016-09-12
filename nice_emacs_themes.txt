@@ -1,0 +1,10 @@
+https://github.com/11111000000/tao-theme-emacs
+https://github.com/fourier/idea-darkula-theme
+https://github.com/xjackk/caroline-theme
+https://github.com/TheSuspiciousWombat/suscolors-emacs
+https://github.com/oneKelvinSmith/monokai-emacs
+https://github.com/kuanyui/moe-theme.el
+https://github.com/n3mo/cyberpunk-theme.el
+https://github.com/m00natic/anti-zenburn-theme
+https://github.com/jordonbiondo/ample-theme
+https://github.com/alloy-d/color-theme-molokai
