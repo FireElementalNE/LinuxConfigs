@@ -5,7 +5,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install -y guake gcc g++ python emacs perl make units git git-cola fish python-pip screen vim
+sudo apt-get install -y guake gcc g++ python emacs perl make units git git-cola fish python-pip screen vim faenza-icon-theme numix-gtx-theme
 cp emacs.el ~/.emacs
 wget https://raw.githubusercontent.com/juba/color-theme-tangotango/master/tangotango-theme.el
 wget https://raw.githubusercontent.com/bkruczyk/badwolf-emacs/master/badwolf-theme.el
