@@ -40,9 +40,9 @@ set pcolor C0C0C0
 set dcolor 7D47B2
 
 function git_hash
-     set -g git_hash (git rev-parse --short HEAD)
-     if [ $status -ne 0 ]
-     	echo " "
+     set -g git_hash (git rev-parse --short HEAD ^ /dev/null)
+     if [ $status -eq 128 ]
+     	echo ""
      else
 	echo " $git_hash] "
      end
@@ -51,7 +51,7 @@ end
 function git_branch
     set -g git_branch (git rev-parse --abbrev-ref HEAD ^ /dev/null)
     if [ $status -ne 0 ]
-        echo " "
+        echo ""
     else
 	
         echo " [$git_branch"
@@ -62,10 +62,10 @@ function fish_prompt
 	 set rc $status
 	 if [ (whoami) != 'root' ]
 	    set ucolor 7CB247
-	    set pchar "\$ "
+	    set pchar " \$ "
 	 else
 	    set ucolor FF6666
-	    set pchar "# "
+	    set pchar " # "
 	 end
 	 echo $rc (set_color $dcolor)(date "+%I:%M%p")(set_color normal):(set_color $ucolor)(whoami)@(hostname)(set_color normal):(set_color $pcolor)" "(prompt_pwd)(set_color yellow)(git_branch)(git_hash)(set_color $pcolor)$pchar
 end
