@@ -39,12 +39,22 @@ end
 set pcolor C0C0C0
 set dcolor 7D47B2
 
+function git_hash
+     set -g git_hash (git rev-parse --short HEAD)
+     if [ $status -ne 0 ]
+     	echo " "
+     else
+	echo " $git_hash] "
+     end
+end
+
 function git_branch
-    set -g try_git (git rev-parse --abbrev-ref HEAD ^ /dev/null)
+    set -g git_branch (git rev-parse --abbrev-ref HEAD ^ /dev/null)
     if [ $status -ne 0 ]
         echo " "
     else
-        echo " $try_git "
+	
+        echo " [$git_branch"
     end
 end
 
@@ -57,7 +67,7 @@ function fish_prompt
 	    set ucolor FF6666
 	    set pchar "# "
 	 end
-	 echo $rc (set_color $dcolor)(date "+%I:%M%p")(set_color normal):(set_color $ucolor)(whoami)@(hostname)(set_color normal):(set_color $pcolor)" "(prompt_pwd)(set_color yellow)(git_branch)(set_color $pcolor)$pchar
+	 echo $rc (set_color $dcolor)(date "+%I:%M%p")(set_color normal):(set_color $ucolor)(whoami)@(hostname)(set_color normal):(set_color $pcolor)" "(prompt_pwd)(set_color yellow)(git_branch)(git_hash)(set_color $pcolor)$pchar
 end
 
 alias ll='ls -alF'
