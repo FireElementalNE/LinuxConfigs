@@ -67,7 +67,8 @@ function fish_prompt
 	    set ucolor FF6666
 	    set pchar " # "
 	 end
-	 echo $rc (set_color $dcolor)(date "+%I:%M%p")(set_color normal):(set_color $ucolor)(whoami)@(hostname)(set_color normal):(set_color $pcolor)" "(prompt_pwd)(set_color yellow)(git_branch)(git_hash)(set_color $pcolor)$pchar
+	 # echo $rc (set_color $dcolor)(date "+%I:%M%p")(set_color normal):(set_color $ucolor)(whoami)@(hostname)(set_color normal):(set_color $pcolor)" "(prompt_pwd)(set_color yellow)(git_branch)(git_hash)(set_color $pcolor)$pchar
+	 echo $rc (set_color $dcolor)(date "+%I:%M%p")(set_color normal):(set_color $ucolor)(whoami)@(hostname)(set_color normal):(set_color $pcolor)" "(prompt_pwd)(set_color $pcolor)$pchar
 end
 
 alias ll='ls -alF'
